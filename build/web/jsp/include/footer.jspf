@@ -1,0 +1,9 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+    <hr>
+    <footer>
+    <p>&copy; 2025 - PRJ301 - FPT University</p>
+    </footer>
+</body>
+</html>
+

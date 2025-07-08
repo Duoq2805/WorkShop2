@@ -1,0 +1,28 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Gi?i thi?u s?n ph?m</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>?? Product Introduction</h1>
+            <nav>
+                <a href="home">Trang ch?</a> |
+                <a href="list">Danh sách</a> |
+                <a href="search">Tìm ki?m</a> |
+                <c:choose>
+                    <c:when test="${not empty sessionScope.acc}">
+                        Xin chào, ${sessionScope.acc.username} |
+                        <a href="logout">??ng xu?t</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="login.jsp">??ng nh?p</a>
+                    </c:otherwise>
+                </c:choose>
+            </nav>
+            <hr>
+        </header>
