@@ -12,17 +12,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
-import model.Product;
-import model.dao.ProductDAO;
 
 /**
  *
- * @author ThaiDuong
+ * @author ZhuanZ（无密码）
  */
-@WebServlet(name = "DetailServlet", urlPatterns = {"/DetailServlet"})
-public class DetailServlet extends HttpServlet {
+@WebServlet(name = "Logoutervlet", urlPatterns = {"/Logoutervlet"})
+public class Logoutervlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +37,10 @@ public class DetailServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DetailServlet</title>");
+            out.println("<title>Servlet Logoutervlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DetailServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Logoutervlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,41 +58,11 @@ public class DetailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String pid = request.getParameter("pid");  // sửa lại kiểu
-        ProductDAO dao = new ProductDAO();
-        Product p = dao.getObjectById(pid);
-
-        if (p == null) {
-            response.sendRedirect("notfound.jsp");  // thêm dòng check
-            return;
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
         }
-
-        request.setAttribute("product", p);
-
-        HttpSession session = request.getSession();
-        List<Product> viewed = (List<Product>) session.getAttribute("viewedProducts");
-        if (viewed == null) {
-            viewed = new ArrayList<>();
-        }
-        if (!viewed.contains(p)) { // tránh trùng
-            viewed.add(p);
-        }
-
-        session.setAttribute("viewedProducts", viewed);
-
-        // Phân khúc
-        double total = 0;
-        for (Product prod : viewed) {
-            total += prod.getPrice();
-        }
-        double avg = total / viewed.size();
-        String segment = (avg < 5_000_000) ? "Thu nhập thấp"
-                : (avg <= 15_000_000) ? "Trung bình"
-                        : "Cao";
-
-        request.setAttribute("segment", segment);
-        request.setAttribute("viewedProducts", viewed);
-        request.getRequestDispatcher("jsp/public/detail.jsp").forward(request, response);
+        response.sendRedirect("login.jsp");
     }
 
     /**

@@ -17,7 +17,7 @@ import model.dao.ProductDAO;
 
 /**
  *
- * @author ZhuanZ（无密码）
+ * @author ThaiDuong
  */
 @WebServlet(name = "ListServlet", urlPatterns = {"/ListServlet"})
 public class ListServlet extends HttpServlet {
