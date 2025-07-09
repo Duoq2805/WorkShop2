@@ -31,7 +31,7 @@
                             <li><a href="LogoutServlet"><span class="glyphicon glyphicon-log-out"></span> ??ng xu?t</a></li>
                             </c:when>
                             <c:otherwise>
-                            <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> ??ng nh?p</a></li>
+                            <li><a href="jsp/public/login.jsp"><span class="glyphicon glyphicon-log-in"></span> ??ng nh?p</a></li>
                             </c:otherwise>
                         </c:choose>
                 </ul>

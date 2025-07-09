@@ -13,7 +13,7 @@ import model.dao.AccountDAO;
  *
  * @author ThaiDuong
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
 
     @Override

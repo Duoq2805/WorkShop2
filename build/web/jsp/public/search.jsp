@@ -22,12 +22,12 @@
 <div class="product-list">
     <c:forEach var="p" items="${searchResult}">
         <div class="product-item">
-            <a href="detail?pid=${p.id}">
-                <img src="${p.image}" alt="${p.name}" />
-                <h3>${p.name}</h3>
+            <a href="jsp/public/product-detail.jsp?id=${p.productId}">
+                <img src="${p.productImage}" alt="${p.productName}" />
+                <h3>${p.productName}</h3>
                 <p>Giá: ${p.price} VNĐ</p>
-                <c:if test="${p.salePrice < p.price}">
-                    <p style="color:red;">Giá KM: ${p.salePrice} VNĐ</p>
+                <c:if test="${p.discount > 0}">
+                    <p style="color:red;">Giá KM: ${p.price - (p.price * p.discount / 100)} VNĐ</p>
                 </c:if>
             </a>
         </div>
