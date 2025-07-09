@@ -1,0 +1,25 @@
+.category-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.3s;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.category-card:hover {
+    background-color: #e6f7ff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-link {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.category-link:hover {
+    text-decoration: underline;
+}

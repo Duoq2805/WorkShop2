@@ -8,21 +8,20 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/jsp/include/header.jspf"%>
 
-<h2>Trang chủ - Sản phẩm nổi bật</h2>
-<div class="product-list">
-    <c:forEach var="p" items="${featuredProducts}">
-        <div class="product-item">
-            <a href="detail?pid=${p.id}">
-                <img src="${p.image}" alt="${p.name}" />
-                <h3>${p.name}</h3>
-                <p>Giá: ${p.price} VNĐ</p>
-                <c:if test="${p.salePrice < p.price}">
-                    <p style="color:red;">Giá KM: ${p.salePrice} VNĐ</p>
-                </c:if>
-            </a>
+
+<h2 class="text-center mb-4">📁 Danh mục sản phẩm</h2>
+        
+        <div class="row">
+            <c:forEach var="c" items="${listCategory}">
+                <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="category-card">
+                        <a class="category-link" href="productPortfolio?typeId=${c.typeId}">
+                            ${c.categoryName}
+                        </a>
+                    </div>
+                </div>
+            </c:forEach>
         </div>
-    </c:forEach>
-</div>
 
 <%@include file="/jsp/include/footer.jspf"%>
 

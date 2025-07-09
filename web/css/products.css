@@ -1,0 +1,162 @@
+/* Reset và layout tổng thể */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Grid layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.col-md-4 {
+    padding: 10px;
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    box-sizing: border-box;
+}
+
+/* Card sản phẩm */
+.product-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #e0e0e0;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Ảnh sản phẩm */
+.product-image-container {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.03);
+}
+
+/* Nội dung card */
+.product-body {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    line-height: 1.3;
+    height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-brief {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    flex: 1;
+    line-height: 1.4;
+    height: 60px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.product-price-container {
+    margin: 10px 0;
+}
+
+.current-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+.discount-badge {
+    background-color: #e74c3c;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.btn-view-detail {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.btn-view-detail:hover {
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

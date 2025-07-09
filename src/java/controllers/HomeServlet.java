@@ -12,14 +12,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
-import model.Product;
-import model.dao.ProductDAO;
+import model.Category;
+import model.dao.CategoryDAO;
 
 /**
  *
- * @author ZhuanZ（无密码）
+ * @author ThaiDuong
  */
-@WebServlet(name = "HomeServlet", urlPatterns = {"/HomeServlet"})
+@WebServlet(name = "HomeServlet", urlPatterns = {"/home"})
 public class HomeServlet extends HttpServlet {
 
     /**
@@ -60,10 +60,9 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ProductDAO dao = new ProductDAO();
-        List<Product> featured = dao.getFeaturedProducts();
-        request.setAttribute("featuredProducts", featured);
-        request.getRequestDispatcher("jsp/public/home.jsp").forward(request, response);
+        List<Category> listCategory = new CategoryDAO().listAll();
+        request.setAttribute("listCategory", listCategory);
+        request.getRequestDispatcher("/jsp/public/home.jsp").forward(request, response);
     }
 
     /**
