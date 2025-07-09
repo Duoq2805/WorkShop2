@@ -19,9 +19,9 @@
                     <a class="navbar-brand" href="home">Product Intro</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="home.jsp">Home</a></li>
-                    <li><a href="list.jsp">Danh sách</a></li>
-                    <li><a href="search.jsp">Tìm ki?m</a></li>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="list">Danh sách</a></li>
+                    <li><a href="search">Tìm ki?m</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

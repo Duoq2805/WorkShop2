@@ -89,7 +89,7 @@
                                     </div>
                                 </div>
 
-                                <a href="productPortfolio?typeId=${product.typeId}" class="btn btn-back">
+                                <a href="${pageContext.request.contextPath}/productPortfolio?typeId=${product.typeId}" class="btn btn-back">
                                     <i class="fas fa-arrow-left me-2"></i>Quay lại danh sách
                                 </a>
                             </div>
@@ -109,7 +109,7 @@
                     <div class="alert alert-danger mt-5">
                         <i class="fas fa-exclamation-triangle me-2"></i>Sản phẩm không tồn tại hoặc đã bị xóa!
                     </div>
-                    <a href="productPortfolio?typeId=${product.typeId}" class="btn btn-back mt-3">
+                    <a href="${pageContext.request.contextPath}/productPortfolio?typeId=${product.typeId}" class="btn btn-back mt-3">
                         <i class="fas fa-arrow-left me-2"></i>Quay lại danh sách
                     </a>
                 </c:otherwise>

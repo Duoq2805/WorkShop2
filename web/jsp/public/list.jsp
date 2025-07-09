@@ -14,24 +14,24 @@
     Min Price: <input type="number" name="min" value="${param.min}">
     Max Price: <input type="number" name="max" value="${param.max}">
     <input type="checkbox" name="sale" value="true" <c:if test="${param.sale eq 'true'}">checked</c:if>> Có giảm giá
-    Sắp xếp:
-    <select name="sort">
-        <option value="">--Chọn--</option>
-        <option value="asc" <c:if test="${param.sort eq 'asc'}">selected</c:if>>Giá tăng</option>
+        Sắp xếp:
+        <select name="sort">
+            <option value="">--Chọn--</option>
+            <option value="asc" <c:if test="${param.sort eq 'asc'}">selected</c:if>>Giá tăng</option>
         <option value="desc" <c:if test="${param.sort eq 'desc'}">selected</c:if>>Giá giảm</option>
-    </select>
-    <input type="submit" value="Lọc">
-</form>
+        </select>
+        <input type="submit" value="Lọc">
+    </form>
 
-<div class="product-list">
+    <div class="product-list">
     <c:forEach var="p" items="${productList}">
         <div class="product-item">
-            <a href="detail?pid=${p.id}">
+            <a href="productDetail?id=${p.id}">
                 <img src="${p.image}" alt="${p.name}" />
                 <h3>${p.name}</h3>
                 <p>Giá: ${p.price} VNĐ</p>
-                <c:if test="${p.salePrice < p.price}">
-                    <p style="color:red;">Giá KM: ${p.salePrice} VNĐ</p>
+                <c:if test="${p.discount > 0}">
+                    <p style="color:red;">Giá KM: ${p.price - (p.price * p.discount / 100)} VNĐ</p>
                 </c:if>
             </a>
         </div>

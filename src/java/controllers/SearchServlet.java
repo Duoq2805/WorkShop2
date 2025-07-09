@@ -19,7 +19,7 @@ import model.dao.ProductDAO;
  *
  * @author ZhuanZ（无密码）
  */
-@WebServlet(name = "SearchServlet", urlPatterns = {"/SearchServlet"})
+@WebServlet(name = "SearchServlet", urlPatterns = {"/search"})
 public class SearchServlet extends HttpServlet {
 
     /**
