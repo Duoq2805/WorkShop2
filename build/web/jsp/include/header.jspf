@@ -6,9 +6,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Gi?i thi?u s?n ph?m</title>
-        <link rel="stylesheet" href="/css/style.css">
+        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body class="container">
@@ -16,24 +20,25 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="home">Product Intro</a>
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/home">Product Intro</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="home">Home</a></li>
-                    <li><a href="list">Danh sách</a></li>
-                    <li><a href="search">Tìm ki?m</a></li>
+                    <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
+                    <li><a href="${pageContext.request.contextPath}/list">Sort By</a></li>
+                    <li><a href="${pageContext.request.contextPath}/search">Search</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     <c:choose>
                         <c:when test="${not empty sessionScope.acc}">
                             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xin chào, ${sessionScope.acc.username}</a></li>
-                            <li><a href="LogoutServlet"><span class="glyphicon glyphicon-log-out"></span> ??ng xu?t</a></li>
+                            <li><a href="${pageContext.request.contextPath}/LogoutServlet"><span class="glyphicon glyphicon-log-out"></span> ??ng xu?t</a></li>
                             </c:when>
                             <c:otherwise>
-                            <li><a href="jsp/public/login.jsp"><span class="glyphicon glyphicon-log-in"></span> ??ng nh?p</a></li>
+                            <li><a href="${pageContext.request.contextPath}/jsp/public/login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                             </c:otherwise>
                         </c:choose>
                 </ul>
             </div>
         </nav>
+

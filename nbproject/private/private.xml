@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/PRJ/WorkShop2/src/java/controllers/ViewedProductsServlet.java</file>
             <file>file:/D:/PRJ/WorkShop2/web/jsp/public/productPortfolio.jsp</file>
-            <file>file:/D:/PRJ/WorkShop2/web/jsp/public/search.jsp</file>
-            <file>file:/D:/PRJ/WorkShop2/web/jsp/public/list.jsp</file>
-            <file>file:/D:/PRJ/WorkShop2/src/java/controllers/HomeServlet.java</file>
-            <file>file:/D:/PRJ/WorkShop2/web/jsp/public/home.jsp</file>
-            <file>file:/D:/PRJ/WorkShop2/src/java/controllers/ListServlet.java</file>
-            <file>file:/D:/PRJ/WorkShop2/web/jsp/public/product-detail.jsp</file>
-            <file>file:/D:/PRJ/WorkShop2/src/java/controllers/ProductByCategoryServlet.java</file>
+            <file>file:/D:/PRJ/WorkShop2/web/WEB-INF/web.xml</file>
+            <file>file:/D:/PRJ/WorkShop2/web/jsp/public/viewedProducts.jsp</file>
             <file>file:/D:/PRJ/WorkShop2/web/jsp/include/header.jspf</file>
         </group>
     </open-files>
