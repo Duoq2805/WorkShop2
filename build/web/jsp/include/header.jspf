@@ -26,6 +26,7 @@
                     <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
                     <li><a href="${pageContext.request.contextPath}/list">Sort By</a></li>
                     <li><a href="${pageContext.request.contextPath}/search">Search</a></li>
+                    <li><a href="${pageContext.request.contextPath}/viewedProducts">Viewed Products</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

@@ -244,4 +244,5 @@ public class ProductDAO implements Accessible<Product> {
         }
         return list;
     }
+
 }

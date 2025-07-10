@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import model.Product;
+import model.dao.ProductDAO;
 import utilities.ConnectDB;
 
 /**
@@ -62,32 +63,13 @@ public class ViewedProductsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Integer userId = (Integer) session.getAttribute("userId");
-        List<Product> viewedProducts = new ArrayList<>();
-
-        if (userId != null) {
-            try ( Connection conn = ConnectDB.getConnection()) {
-                String query = "SELECT p.* FROM Products p JOIN ViewHistory vh ON p.id = vh.product_id WHERE vh.user_id = ? ORDER BY vh.view_date DESC LIMIT 5";
-                PreparedStatement stmt = conn.prepareStatement(query);
-                stmt.setInt(1, userId);
-                ResultSet rs = stmt.executeQuery();
-
-                while (rs.next()) {
-                    Product product = new Product();
-                    product.setProductId(rs.getInt("id"));
-                    product.setName(rs.getString("name"));
-                    product.setPrice(rs.getDouble("price"));
-                    product.setDiscount(rs.getDouble("discount"));
-                    product.setCategoryId(rs.getInt("category_id"));
-                    viewedProducts.add(product);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        List<Product> viewedProducts = (List<Product>) session.getAttribute("viewedProducts");
+        if (viewedProducts == null) {
+            viewedProducts = new ArrayList<>();
         }
 
         request.setAttribute("viewedProducts", viewedProducts);
-        request.getRequestDispatcher("/viewedProducts.jsp").forward(request, response);
+        request.getRequestDispatcher("/jsp/public/viewedProducts.jsp").forward(request, response);
     }
 
     /**
